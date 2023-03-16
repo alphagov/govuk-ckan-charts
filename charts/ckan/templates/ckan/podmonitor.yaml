@@ -14,4 +14,8 @@ spec:
       app: {{ .Release.Name }}-ckan
   podMetricsEndpoints:
   - port: http
+    metricRelabelings:
+    - action: labelmap
+      regex: ^flask_(.*)
+      replacement: ${1}
 {{- end }}
