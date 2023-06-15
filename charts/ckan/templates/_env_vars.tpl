@@ -29,7 +29,7 @@
 - name: CKAN_CONFIG
   value: /config/
 - name: CKAN_INI
-  value: /config/production.ini
+  value: /config/ckan.ini
 - name: CKAN_REDIS_URL
   value: redis://{{ .redis.host | default (print $.Release.Name "-redis") }}/{{ .redis.db_number | default "1" }}
   {{- if $.Values.dev.enabled }}

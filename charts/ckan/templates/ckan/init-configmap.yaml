@@ -4,11 +4,12 @@ metadata:
   name: {{ .Release.Name }}-ckan-init
 data:
   init.sh: |
-    # copy production.ini
-    cp /map/production.ini /config
+    # copy ckan.ini
+    cp /map/ckan.ini /config
 
-    # update production.ini
+    # update ckan.ini
     ckan config-tool $CKAN_INI "beaker.session.secret=$CKAN_BEAKER_SESSION_SECRET"
+    ckan config-tool $CKAN_INI "ckan.i18n_directory=$CKAN_VENV/src/ckanext-datagovuk/ckanext/datagovuk"
 
     {{- if $.Values.dev.enabled }}
     ckan config-tool $CKAN_INI "ckan.datagovuk.s3_aws_access_key_id = $CKAN_AWS_ACCESS_KEY_ID"

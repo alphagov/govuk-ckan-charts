@@ -5,11 +5,14 @@ metadata:
 data:
   init.sh: |
     # copy config files first 
-    cp /map/production.ini /config
+    cp /map/ckan.ini /config
     cp /pycsw/pycsw.cfg /config
     cp $CKAN_VENV/src/ckan/who.ini /config
 
-    # update production.ini
+    # update ckan.ini
     ckan config-tool $CKAN_INI "ckan.plugins = harvest ckan_harvester spatial_metadata spatial_query spatial_harvest_metadata_api gemini_csw_harvester gemini_waf_harvester gemini_doc_harvester"
     ckan config-tool $CKAN_INI "ckan.i18n_directory ="
     ckan config-tool $CKAN_INI "who.config_file = /config/who.ini"
+
+    # run init script
+    /pycsw-entrypoint.sh
