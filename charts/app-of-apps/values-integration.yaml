@@ -51,8 +51,8 @@ ckanHelmValues:
   dev:
     enabled: false
   gather:
-    count: 1
+    count: 0
   fetch:
-    count: 1
+    count: 0
   externalSecret:
     enabled: true
