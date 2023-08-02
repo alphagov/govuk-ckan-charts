@@ -7,6 +7,8 @@
       key: {{ .sqlalchemyUrlSecretKeyRef.key }}
 - name: CKAN_DB_HOST
   value: {{ .dbHost | default (print $.Release.Name "-postgres") }}
+- name: CKAN_DB_INIT
+  value: false
 - name: CKAN_SOLR_URL
   value: {{ .solr.url | default (print "http://" $.Release.Name "-solr/solr/ckan") }}
 - name: CKAN_SITE_ID
