@@ -3,6 +3,7 @@ kind: CronJob
 metadata:
   name: {{ .Release.Name }}-pycsw-load
 spec:
+  suspend: true
   schedule: "0 0 * * *"
   jobTemplate:
     spec:
