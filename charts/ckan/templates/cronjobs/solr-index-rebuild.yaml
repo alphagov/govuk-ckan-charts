@@ -19,6 +19,7 @@ spec:
                 - name: production-ini
                   mountPath: /config
                   readOnly: true
+          concurrencyPolicy: Forbid
           restartPolicy: OnFailure
           volumes:
             - name: production-ini
