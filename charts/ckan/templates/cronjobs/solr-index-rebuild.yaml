@@ -5,6 +5,7 @@ metadata:
 spec:
   schedule: "0 8-22 * * *"
   suspend: true
+  concurrencyPolicy: Forbid
   jobTemplate:
     spec:
       template:
@@ -20,7 +21,6 @@ spec:
                 - name: production-ini
                   mountPath: /config
                   readOnly: true
-          concurrencyPolicy: Forbid
           restartPolicy: OnFailure
           volumes:
             - name: production-ini
