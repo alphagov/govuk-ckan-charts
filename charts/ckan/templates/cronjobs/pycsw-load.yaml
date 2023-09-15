@@ -4,6 +4,7 @@ metadata:
   name: {{ .Release.Name }}-pycsw-load
 spec:
   schedule: "50 9 * * *"
+  suspend: true
   jobTemplate:
     spec:
       template:
