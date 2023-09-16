@@ -2,7 +2,7 @@ ckanHelmValues:
   environment: staging
   ckan:
     args: ["gunicorn --bind 0.0.0.0:5000 wsgi:application --timeout 120"]
-    searchIndexCmd: [ ckan, search-index, rebuild, -i ]
+    searchIndexCmd: [ ckan, search-index, rebuild, -r, -i ]
     probes:
       enabled: true
     config:
