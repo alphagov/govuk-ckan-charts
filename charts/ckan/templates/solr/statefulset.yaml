@@ -39,8 +39,8 @@ spec:
           volumeMounts:
             - name: data
               mountPath: /var/solr/data
-            - name: solr-schema
-              mountPath: /var/solr/data/ckan/conf
+            # - name: solr-schema
+            #   mountPath: /var/solr/data/ckan/conf
           {{- end }}
           readinessProbe:
             httpGet:
@@ -54,13 +54,13 @@ spec:
               port: solr
             initialDelaySeconds: 10
             periodSeconds: 3
-      volumes:
       {{- if .Values.solr.persistence.enabled }}
+      volumes:
         - name: data
           persistentVolumeClaim:
             claimName: {{ .Values.solr.persistence.persistentVolumeClaimName }}
+        # - name: solr-schema
+        #   configMap:
+        #     name: {{ .Release.Name }}-solr-schema
       {{- end }}
-        - name: solr-schema
-          configMap:
-            name: {{ .Release.Name }}-solr-schema
 {{- end }}
