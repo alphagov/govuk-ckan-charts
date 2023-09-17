@@ -21,7 +21,7 @@ spec:
       initContainers:
         - name: fix-volume-permissions
           image: '{{ include "docker-uri" (dict "environment" .Values.environment "app" "solr" "files" $.Files) }}'
-          command: [ bash, -c, "chown -R solr:solr /var/solr/data", "&&", "sed -z 's/<schema name=\"ckan-2.10\" version=\"1.6\">/<schema name=\"ckan\" version=\"2.9\">/' -i /opt/solr/server/solr/configsets/ckan/conf/managed-schema"]
+          command: [ bash, -c, "chown -R solr:solr /var/solr/data"]
           securityContext:
             runAsUser: 0
             runAsGroup: 0
