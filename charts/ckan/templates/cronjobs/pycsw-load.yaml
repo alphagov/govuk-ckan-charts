@@ -3,7 +3,7 @@ kind: CronJob
 metadata:
   name: {{ .Release.Name }}-pycsw-load
 spec:
-  schedule: "05 14 * * *"
+  schedule: "55 15 * * *"
   jobTemplate:
     spec:
       template:
