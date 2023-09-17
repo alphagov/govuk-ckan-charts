@@ -3,7 +3,7 @@ kind: ConfigMap
 metadata:
   name: {{ .Release.Name }}-solr-schema
 data:
-  solr-schema: |
+  managed-schema: |
     <?xml version="1.0" encoding="UTF-8" ?>
     <!--
     Licensed to the Apache Software Foundation (ASF) under one or more

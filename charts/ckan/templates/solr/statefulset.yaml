@@ -40,7 +40,7 @@ spec:
             - name: data
               mountPath: /var/solr/data
             - name: solr-schema
-              mountPath: /var/solr/data/ckan/conf/managed-schema
+              mountPath: /var/solr/data/ckan/conf
           {{- end }}
           readinessProbe:
             httpGet:
