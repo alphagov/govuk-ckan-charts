@@ -1,3 +1,3 @@
 repository: ghcr.io/alphagov/pycsw
-tag: 944af10a1b2a7d898d6954d80e2b065108e71189
-branch: main
+tag: 18ee1c5ed88c9080edeafab3a20d294e2b41834a
+branch: fix-create-pr-nothing-to-commit-2
