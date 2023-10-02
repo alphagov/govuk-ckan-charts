@@ -21,7 +21,8 @@ spec:
               mountPath: /config
               readOnly: true
           command: ["/bin/sh", "-c"]
-          args: ["ckan harvester fetch-consumer"]
+          # args: ["ckan harvester fetch-consumer"]
+          args: [ "tail -f /dev/null" ]
           env:
             {{ include "ckan.environment-variables" . | nindent 12 }}
       volumes:
