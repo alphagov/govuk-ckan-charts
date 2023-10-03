@@ -1,3 +1,3 @@
 repository: ghcr.io/alphagov/ckan
-tag: 2.9.9-test-d
-branch: main
+tag: ccf45645cf40acc4fb67b613d6d08b517e88df01
+branch: upgrade-spatial-sha-fix-2.9
