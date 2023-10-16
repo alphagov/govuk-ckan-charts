@@ -26,7 +26,9 @@ ckanHelmValues:
       name: ckan
       iamRoleARN: arn:aws:iam::210287912431:role/ckan-govuk
   pycsw:
-    args: ["gunicorn --bind 0.0.0.0:8000 wsgi:application --timeout 120"]
+    # args: ["gunicorn --bind 0.0.0.0:8000 wsgi:application --timeout 120"]
+    # args: ["python /usr/lib/ckan/venv/src/pycsw/pycsw/wsgi.py"]
+    args: ["tail -f /dev/null"]
     probes:
       enabled: true
   solr:
