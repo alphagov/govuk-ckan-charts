@@ -30,7 +30,7 @@ ckanHelmValues:
     # args: ["python /usr/lib/ckan/venv/src/pycsw/pycsw/wsgi.py"]
     args: ["tail -f /dev/null"]
     probes:
-      enabled: true
+      enabled: false
   solr:
     enabled: true
     persistence:
